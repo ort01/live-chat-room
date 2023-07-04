@@ -28,13 +28,18 @@ const displayName = ref<string>("");
 const email = ref<string>("");
 const password = ref<string | number>("");
 
+//emits
+const emit = defineEmits();
+
 // composables
 const { error, signUp } = useSignUp();
 
 // functions
 const handleSubmit = async () => {
   await signUp(email.value, password.value, displayName.value);
-  console.log("user signed up");
+  if (!error.value) {
+    emit("signup");
+  }
 };
 </script>
 

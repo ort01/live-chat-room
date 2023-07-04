@@ -21,6 +21,9 @@ import useLogin from "../composables/useLogin.js";
 const email = ref<string>("");
 const password = ref<string | number>("");
 
+//emits
+const emit = defineEmits();
+
 // Composables
 const { error, login } = useLogin();
 
@@ -28,7 +31,7 @@ const { error, login } = useLogin();
 const handleSubmit = async () => {
   await login(email.value, password.value);
   if (!error.value) {
-    console.log("user logged in");
+    emit("login");
   }
 };
 </script>
