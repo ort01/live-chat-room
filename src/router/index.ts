@@ -1,19 +1,18 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import WelcomeView from '../views/WelcomeView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
-      name: 'welcome',
-      component: WelcomeView
+      name: 'Welcome',
+      component: () => import('../views/WelcomeView.vue')
     },
-    // {
-    //   path: '/about',
-    //   name: 'about',
-    //   component: () => import('../views/AboutView.vue')
-    // }
+    {
+      path: '/chatroom',
+      name: 'Chatroom',
+      component: () => import('../views/ChatroomView.vue')
+    }
   ]
 })
 

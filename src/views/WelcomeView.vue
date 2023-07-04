@@ -50,8 +50,14 @@ const showLogin = ref<boolean>(true);
     border-radius: 20px;
     border: 1px solid #eee;
     outline: none;
-    color: #999;
+    color: #757575;
+    font-weight: 600;
     margin: 10px auto;
+
+    &::placeholder {
+      opacity: 0.5;
+      font-weight: 400;
+    }
   }
 
   & span {
