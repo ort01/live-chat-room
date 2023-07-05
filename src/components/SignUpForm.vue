@@ -26,7 +26,7 @@ import useSignUp from "../composables/useSignUp";
 // data
 const displayName = ref<string>("");
 const email = ref<string>("");
-const password = ref<string | number>("");
+const password = ref<string>("");
 
 //emits
 const emit = defineEmits();

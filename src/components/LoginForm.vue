@@ -19,7 +19,7 @@ import useLogin from "../composables/useLogin.js";
 
 // Data
 const email = ref<string>("");
-const password = ref<string | number>("");
+const password = ref<string>("");
 
 //emits
 const emit = defineEmits();
