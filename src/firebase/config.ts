@@ -3,7 +3,7 @@ import 'firebase/firestore'
 import 'firebase/auth'
 
 
-const firebaseConfig = {
+const firebaseConfig: any = {
     apiKey: "AIzaSyDr2eVqQw0_4ex6vRZhzJHS3zrjJeVi0yw",
     authDomain: "udemy-vue-firebase-cours-1af1e.firebaseapp.com",
     projectId: "udemy-vue-firebase-cours-1af1e",

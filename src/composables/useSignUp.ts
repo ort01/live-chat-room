@@ -5,10 +5,10 @@ import { projectAuth } from "../firebase/config"
 const error = ref(null)
 
 
-const signUp = async (email, password, displayName) => {
+const signUp = async (email: string, password: string, displayName: string) => {
     error.value = null
     try {
-        const res = await projectAuth.createUserWithEmailAndPassword(email, password)
+        const res: any = await projectAuth.createUserWithEmailAndPassword(email, password)
         if (!res) {
             throw new Error('Could not complete the signup')
         } else {
@@ -21,7 +21,7 @@ const signUp = async (email, password, displayName) => {
             error.value = null
             return res
         }
-    } catch (err) {
+    } catch (err: any) {
         console.log(err.message)
         error.value = err.message
     }

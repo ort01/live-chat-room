@@ -4,7 +4,7 @@ import { projectAuth } from "../firebase/config"
 
 const error = ref(null)
 
-const login = async (email, password) => {
+const login = async (email: string, password: string) => {
     error.value = null
 
     try {
@@ -14,7 +14,7 @@ const login = async (email, password) => {
         console.log(res);
         return res
 
-    } catch (err) {
+    } catch (err: any) {
         console.log(err.message);
         error.value = err.message
     }
