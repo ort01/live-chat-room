@@ -2,7 +2,7 @@
 
 import { ref } from "vue";
 import { projectFirestore } from "../firebase/config";
-import { QuerySnapshot, DocumentData } from 'firebase/firestore';
+
 
 const getCollection = (collectionName: string) => {
 
@@ -14,7 +14,7 @@ const getCollection = (collectionName: string) => {
 
     //onSnapshot is how we set up a real time listener to the firestore database, 
     //each time theres a change in that database collection it sends us back a snapShot (with all of the data from that moment in time) and fires the callback F
-    collectionRef.onSnapshot((snapshot: QuerySnapshot<DocumentData>) => {
+    collectionRef.onSnapshot((snapshot) => {
         let results: any = []
 
         //cycling through the documents and adding each document to results array
