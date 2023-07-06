@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <NavBar />
+    <ChatWindow />
     <NewChatForm />
   </div>
 </template>
@@ -15,6 +16,7 @@ import { watch } from "vue";
 import { useRouter } from "vue-router";
 import NavBar from "../components/NavBar.vue";
 import NewChatForm from "../components/NewChatForm.vue";
+import ChatWindow from "../components/ChatWindow.vue";
 import getUser from "../composables/getUser";
 
 // composables
