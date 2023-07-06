@@ -2,7 +2,7 @@ import firebase from "firebase/app";
 import 'firebase/firestore'
 import 'firebase/auth'
 
-
+//config fiel from firestore.com - project overview, settings
 const firebaseConfig: any = {
     apiKey: "AIzaSyDr2eVqQw0_4ex6vRZhzJHS3zrjJeVi0yw",
     authDomain: "udemy-vue-firebase-cours-1af1e.firebaseapp.com",
@@ -13,10 +13,10 @@ const firebaseConfig: any = {
 };
 
 //init firebase
-firebase.initializeApp(firebaseConfig)
+firebase.initializeApp(firebaseConfig) //initialization of firebase
 
-const projectFirestore = firebase.firestore()
-const projectAuth = firebase.auth()
-const timestamp = firebase.firestore.FieldValue.serverTimestamp
+const projectFirestore = firebase.firestore() //comunicationg with the database, storing some values
+const projectAuth = firebase.auth() // authentication for users
+const timestamp = firebase.firestore.FieldValue.serverTimestamp //gets the time of when the data was created
 
 export { projectFirestore, timestamp, projectAuth }

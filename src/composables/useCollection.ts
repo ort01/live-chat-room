@@ -1,3 +1,5 @@
+// useCollection - is to do something with the collection, like add a new document to it.
+
 import { ref } from "vue"
 import { projectFirestore } from "../firebase/config"
 
