@@ -1,6 +1,6 @@
 // getCollection - is to set up a listener to get the documents from the collection
 
-import { ref } from "vue";
+import { ref, watchEffect } from "vue";
 import { projectFirestore } from "../firebase/config";
 
 
@@ -14,8 +14,9 @@ const getCollection = (collectionName: string) => {
 
     //onSnapshot is how we set up a real time listener to the firestore database, 
     //each time theres a change in that database collection it sends us back a snapShot (with all of the data from that moment in time) and fires the callback F
-    collectionRef.onSnapshot((snapshot) => {
+    const unSub = collectionRef.onSnapshot((snapshot) => {
         let results: any = []
+        console.log("snapshot");
 
         //cycling through the documents and adding each document to results array
         snapshot.docs.forEach((doc) => {
@@ -28,6 +29,14 @@ const getCollection = (collectionName: string) => {
     }, (err) => {
         documents.value = []
         error.value = err.message
+    })
+
+    // watchEffect watches for changes and when they happen the callback function is called
+    // onInvalide - if the component unmountes onInvalidate function is called
+    watchEffect((onInvalidate) => {
+        onInvalidate(() => {
+            unSub()
+        })
     })
 
     return { error, documents }
