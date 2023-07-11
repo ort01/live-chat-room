@@ -14,6 +14,7 @@ const getCollection = (collectionName: string) => {
 
     //onSnapshot is how we set up a real time listener to the firestore database, 
     //each time theres a change in that database collection it sends us back a snapShot (with all of the data from that moment in time) and fires the callback F
+    // onSnapshot function returns a function that can stop listening for snapshots - https://firebase.google.com/docs/firestore/query-data/listen
     const unSub = collectionRef.onSnapshot((snapshot) => {
         let results: any = []
         console.log("snapshot");
@@ -33,6 +34,7 @@ const getCollection = (collectionName: string) => {
 
     // watchEffect watches for changes and when they happen the callback function is called
     // onInvalide - if the component unmountes onInvalidate function is called
+    //unSub() - stoppes the onSnapshot functions
     watchEffect((onInvalidate) => {
         onInvalidate(() => {
             unSub()
