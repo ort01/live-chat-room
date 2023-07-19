@@ -7,3 +7,6 @@ service cloud.firestore {
     }
   }
 }
+
+// request object we get access to in firestore rules;
+// Request object contains informations about the request
