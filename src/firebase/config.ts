@@ -15,7 +15,7 @@ const firebaseConfig: any = {
 //init firebase
 firebase.initializeApp(firebaseConfig) //initialization of firebase
 
-const projectFirestore = firebase.firestore() //comunicationg with the database, storing some values
+const projectFirestore = firebase.firestore() //comunication with the database, storing some values
 const projectAuth = firebase.auth() // authentication for users
 const timestamp = firebase.firestore.FieldValue.serverTimestamp //gets the time of when the data was created
 
