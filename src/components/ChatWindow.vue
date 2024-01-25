@@ -2,11 +2,7 @@
   <div class="chat-window">
     <div class="error" v-if="error">{{ error }}</div>
     <div ref="messages" class="chat-window__messages" v-if="documents">
-      <div
-        class="chat-window__messages--single"
-        v-for="doc in formattedDocuments"
-        :key="doc.id"
-      >
+      <div class="chat-window__messages--single" v-for="doc in formattedDocuments" :key="doc.id">
         <span class="created-at">{{ doc.createdAt }} ago</span>
         <span class="name">{{ doc.name }}:</span>
         <span class="message">{{ doc.message }}</span>
